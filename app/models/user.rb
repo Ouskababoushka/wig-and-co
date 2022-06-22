@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :wigs, :requests
+  has_many :wigs
+  has_many :requests
+  has_many :likes
+  has_many :liked_wigs, through: :likes, source: :wigs
 end

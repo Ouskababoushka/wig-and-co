@@ -1,0 +1,15 @@
+<div class="container col-3">
+  <h1>Rent your dirty Wig!</h1>
+
+  <%= simple_form_for [@wig] do |f| %>
+    <%= f.input :name, label: 'Name' %>
+    <%= f.input :color,:collection => [:blue, :red, :yellow, :black, :gray, :purple, :white], label: 'Color' %>
+    <%= f.input :shape,:collection => [:round, :pointy, :big, :thin, :thick], label: 'Shape' %>
+    <%= f.input :price, label: 'Price' %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <div class="d-grid mx-auto">
+      <%= f.button:submit, 'Add my Wig!', class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

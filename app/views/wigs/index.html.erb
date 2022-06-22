@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="banner">
+    <div class="container">
+      <h1>Find the perfect Wig ? <br> Faites d'une <strong>pierre</strong> 2 coups et louez un <strong>caillou</strong>!</h1>
+        <%= link_to "Trouvez le caillou idéal!", "#top", class: "btn btn-ghost-banner mt-3"%>
+    </div>
+  </div>
+
+<a class="btn-semi-ghost" href=<%= new_wig_path %>>Share your wig!</a>
+
+  <% @wigs.each do |wig| %>
+    <div class="card-product">
+      <img src= <%= cl_image_path(wig.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">/>
+      <div class="card-product-infos">
+        <h2> <%= wig.name %> </h2>
+        <p> <%= wig.description %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>
