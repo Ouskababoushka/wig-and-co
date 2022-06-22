@@ -12,13 +12,24 @@ Request.destroy_all
 Wig.destroy_all
 User.destroy_all
 
+puts "Create User"
+
+@toto = User.create!(first_name: 'toto', last_name: 'titi', email: 'toto@gmail.com', address: '20 Saint-Jacques, 44850 Saint-Mars-du-Désert', password: "azerty")
+@karl = User.create!(first_name: 'karl', last_name: 'marx', email: 'karl@gmail.com', address: '20 Saint-Jacques, 44850 Saint-Mars-du-Désert', password: "azerty")
+@sarah = User.create!(first_name: 'sarah', last_name: 'menu', email: 'sarah@gmail.com', address: '20 Saint-Jacques, 44850 Saint-Mars-du-Désert', password: "azerty")
+@val = User.create!(first_name: 'val', last_name: 'chauveau', email: 'val@gmail.com', address: '20 Saint-Jacques, 44850 Saint-Mars-du-Désert', password: "azerty")
+@julie = User.create!(email: 'galène.calum@gmail.com', first_name: 'julie', last_name: 'Coquillart', address: '20 Saint-Jacques, 44850 Saint-Mars-du-Désert', password: "azerty")
+@agathe = User.create!(email: 'anastase.rochera@gmail.com', first_name: 'Anatase', last_name: 'Gravelle', address: 'Gaudant 17 rue du Dr Magnan, 75013 Paris', password: "azerty")
+
 puts "Create Wigs"
 
-perruque1 = Wig.create(id: 1, name: 'cool', color: 'blue', shape: 'thin', description: 'super wig yo!')
+@chouchouwig = Wig.create!(user: @toto, name: 'chouchou', color: 'blue', shape: 'thin', description: 'super wig yo!', price: 50)
+@perruque = Wig.create!(user: @toto, name: 'perruque', color: 'red', shape: 'thick', description: 'nice one', price: 20)
+@haircool = Wig.create!(user: @karl, name: 'haircool', color: 'red', shape: 'thick', description: 'nice one', price: 20)
+@wiggy = Wig.create!(user: @karl, name: 'haircool', color: 'red', shape: 'thick', description: 'nice one', price: 20)
 
-perruque2 = Wig.create(id: 2, name: 'kiki', color: 'red', shape: 'thick', description: 'nice one')
 
 puts 'done'
 
-p perruque1
-p perruque2
+p @chouchouwig
+p @perruque
