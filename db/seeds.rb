@@ -28,8 +28,18 @@ puts "Create Wigs"
 @haircool = Wig.create!(user: @karl, name: 'haircool', color: 'red', shape: 'thick', description: 'nice one', price: 20)
 @wiggy = Wig.create!(user: @karl, name: 'haircool', color: 'red', shape: 'thick', description: 'nice one', price: 20)
 
+puts "Images to wigs"
+
+file = URI.open('https://res.cloudinary.com/dwp9byvnr/image/upload/v1655913031/wig1_rbiufq.png')
+@chouchouwig.photo.attach(io: file, filename: 'chouchouwig.png', content_type: 'image/png')
+
+file = URI.open('https://res.cloudinary.com/dwp9byvnr/image/upload/v1655913030/wig2_ikdsjj.png')
+@perruque.photo.attach(io: file, filename: 'perruque.png', content_type: 'image/png')
+
+file = URI.open('https://res.cloudinary.com/dwp9byvnr/image/upload/v1655913911/wig3_ujaxrh.png')
+@haircool.photo.attach(io: file, filename: 'haircool.png', content_type: 'image/png')
+
+file = URI.open('https://res.cloudinary.com/dwp9byvnr/image/upload/v1655913911/wig4_xfrm03.png')
+@wiggy.photo.attach(io: file, filename: 'wiggy.png', content_type: 'image/png')
 
 puts 'done'
-
-p @chouchouwig
-p @perruque

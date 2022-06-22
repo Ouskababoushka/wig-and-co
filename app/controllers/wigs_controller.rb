@@ -14,9 +14,9 @@ class WigsController < ApplicationController
   end
 
   def create
-    @wig = Wig.new(truc_params)
+    @wig = Wig.new(wig_params)
     if @wig.save
-      redirect_to wig_path(@wig)
+      redirect_to root_path
     else
       render :new
     end
@@ -42,6 +42,6 @@ class WigsController < ApplicationController
   private
 
   def wig_params
-    params.require(:wig).permit(:name, :color, :shape, :description, :price, :user_id)
+    params.require(:wig).permit(:name, :color, :shape, :description, :price, :user_id, :photo)
   end
 end
