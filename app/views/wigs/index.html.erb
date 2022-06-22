@@ -1,0 +1,9 @@
+<div class="container">
+
+<%= link_to new_wig_path, class: "btn btn-warning" %>
+
+  <% @wigs.each do |wig| %>
+    <%= wig.name %>
+  <% end %>
+
+</div>
